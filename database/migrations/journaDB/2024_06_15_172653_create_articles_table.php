@@ -19,7 +19,14 @@ return new class extends Migration
             $table->date('submission_date');
             $table->date('publication_date')->nullable();
             $table->enum('status', ['1', '2', '3', '4']);
-            $table->text('upload_pdf');
+            $table->longText('upload_pdf');
+            
+            // extra
+            $table->integer('volume')->nullable();
+            $table->integer('issue')->nullable();
+            $table->integer('first_page')->nullable();
+            $table->integer('last_page')->nullable();
+
             $table->foreignId('journal_id')->constrained('jdb_journals')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('jdb_users')->onDelete('cascade');
             $table->timestamps();

@@ -1,5 +1,4 @@
 @section('sidebar')
-
 <!-- Sidebar Widgets Column -->
 <div class="col-lg-4">
                 <!-- Search Widget -->

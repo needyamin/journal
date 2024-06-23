@@ -1,4 +1,3 @@
-
 @section('nav')
 <div class="container-lg">
 <a href="{{ url('/') }}">
@@ -43,15 +42,8 @@
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                 </ul>
-
-
-
             </div>
         </div>
     </nav>
-    
-    
-      
-
 
 @endsection

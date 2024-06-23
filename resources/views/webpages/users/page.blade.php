@@ -1,5 +1,20 @@
 @extends('layouts.users')
 @section('title', $article->title . ' - Article Page')
+@section('meta-tags')
+    <meta name="citation_title" content="{{ $article->title }}">
+    <meta name="citation_author" content="">
+    <meta name="citation_publication_date" content="{{ \Carbon\Carbon::parse($article->created_at)->format('Y/m/d') }}">
+    <meta name="citation_journal_title" content="Your Journal Name">
+    <meta name="citation_volume" content="article->volume">
+    <meta name="citation_issue" content="article->issue">
+    <meta name="citation_firstpage" content="article->first_page">
+    <meta name="citation_lastpage" content="article->last_page">
+    <meta name="citation_pdf_url" content="@foreach (json_decode($article->upload_pdf) as $filePaths){{ url($filePaths) }}@endforeach">
+    
+    @foreach ($keywords as $keyword)
+        <meta name="citation_keywords" content="{{ $keyword->keyword }}">
+    @endforeach
+@endsection
 
 @section('content')
 @extends('re_usable_users.header')
@@ -32,12 +47,11 @@
 
     <div class="card-footer text-muted">Uploaded Files: <br>
     @foreach (json_decode($article->upload_pdf) as $filePaths)
-        <a href="{{ url($filePaths) }}" target="_blank">{{ basename($filePaths) }}</a><br>
+        <a href="{{ url($filePaths) }}" title="{{ $article->title }}" target="_blank">{{ basename($filePaths) }}</a><br>
     @endforeach
     </div>
 
     </article>
-
 
     @endif
 
@@ -63,7 +77,7 @@
                 </section> -->
        
 </div>
-    
+
 <div class="col-lg-1">
     <div class="card"> ss </div>
 </div>

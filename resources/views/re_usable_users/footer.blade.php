@@ -1,5 +1,4 @@
 @section('footer')
-
 <!-- Footer -->
 <footer class="py-4 bg-dark">
         <div class="container text-center text-white">
@@ -14,8 +13,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-VoeqEMqLhG3gaqzq+5yXsFawqErIQqoa04VfpKDI2+rkJzsIhe/jmzx3I9kzFkRP"
         crossorigin="anonymous"></script>
-
-
-
 </div>
 @endsection
