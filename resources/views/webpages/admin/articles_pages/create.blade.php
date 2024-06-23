@@ -42,7 +42,7 @@
 
         <div class="mb-3">
             <label for="abstract" class="form-label">Abstract</label>
-            <textarea class="form-control" id="content" name="abstract" rows="5" required>{{ old('content') }}</textarea>
+            <textarea class="form-control" id="content" name="abstract" value="{{ old('abstract') }}" rows="5" required>{{ old('content') }}</textarea>
         </div>
         <div class="mb-3">
             <label for="journal_id" class="form-label">Journal</label>
@@ -62,7 +62,7 @@
 
         <div class="mb-3">
             <label for="publish_date" class="form-label">Publish date</label>
-            <input type="date" class="form-control" id="publish_date" name="publish_date" value="{{ old('publish_date', now()->format('Y-m-d')) }}" required>
+            <input type="date" class="form-control" id="publish_date" name="publish_date" value="{{ old('publish_date', now()->format('Y-m-d')) }}" style="width:20%;" required>
             </div>
 
         <div id="fileUploadContainer">

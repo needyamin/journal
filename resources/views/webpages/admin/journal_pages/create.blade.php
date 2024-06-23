@@ -13,6 +13,12 @@
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="title" required>
             </div>
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Slug</label>
+                <input type="text" class="form-control" id="slug" name="slug_url" value="{{ old('slug') }}" required>
+            </div>
+
             <div class="mb-3">
                 <label for="issn" class="form-label">ISSN</label>
                 <input type="text" class="form-control" id="issn" name="issn" required>
@@ -30,8 +36,14 @@
     </div>
 
 
-		
-
-
+    <script>
+        document.getElementById('title').addEventListener('input', function() {
+            var title = this.value;
+            var slug = title.split(/\s+/)
+                            .map(word => word.charAt(0).toUpperCase())
+                            .join('');
+            document.getElementById('slug').value = slug;
+        });
+    </script>
 
 @endsection

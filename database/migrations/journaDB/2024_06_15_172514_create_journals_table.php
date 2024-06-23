@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('jdb_journals', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug_url');
             $table->string('issn')->unique();
             $table->decimal('impact_factor', 3, 2);
             $table->text('description')->nullable();
