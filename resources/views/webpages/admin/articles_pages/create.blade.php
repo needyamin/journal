@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Dashboard')
+@section('title', 'Create Article')
 @section('content')
 
 <!-- Select2 CSS -->
@@ -54,6 +54,7 @@
                 @endforeach
             </select>
         </div>
+        
         <div class="mb-3">
             <label for="keywords" class="form-label">Keywords</label>
             <select class="form-select" id="keywords" name="keywords[]" multiple="multiple"></select>
@@ -122,6 +123,8 @@ $(document).ready(function() {
 
 
 
+
+  // multipule times add add new file 
 document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('addNewButton').addEventListener('click', function () {
                 var newFileInput = document.createElement('div');

@@ -44,19 +44,15 @@ Route::get('/keywords/search', [ArticleController::class, 'search'])->name('keyw
 
 
 
-
-
 // Prefix all routes with 'admin'
 Route::prefix('admin')->group(function () {
     Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
 });
 
-
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
 #Admin Dashboard
 #Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 });
-
 
 Route::group(['middleware' => ['auth', 'checkPermission:create']], function () {
 Route::get('yamin', function () {return view('webpages.dashboard');});
